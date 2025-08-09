@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andressa & Germán</title>
+<!-- Fuente Kapakana -->
+<link href="https://fonts.cdnfonts.com/css/kapakana" rel="stylesheet">
+<!-- Fuente Scheherazade New -->
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #195e38;
+}
+
+/* Pantalla inicial */
+#intro {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: 'Kapakana', cursive;
+  font-size: 6em;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+/* Pantalla de botones */
+#main {
+  opacity: 0;
+  background-color: #f8f6ec;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-family: 'Scheherazade New', serif;
+  transition: opacity 2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+button {
+  background-color: #b08d57;
+  color: white;
+  border: none;
+  padding: 25px 50px;
+  font-size: 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Scheherazade New', serif;
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  Andressa & Germán
+</div>
+
+<div id="main">
+  <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=Carrer+de+l%27Oblit+24+Barcelona&travelmode=driving')">
+    Cómo llegar a la iglesia
+  </button>
+  <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=Carrer+Berruguete+126+Barcelona&travelmode=driving')">
+    Cómo llegar al restaurante
+  </button>
+</div>
+
+<script>
+setTimeout(() => {
+  // Difuminar texto y cambiar fondo gradualmente a blanco roto
+  document.getElementById('intro').style.opacity = 0;
+  document.body.style.transition = 'background-color 2s ease';
+  document.body.style.backgroundColor = '#f8f6ec';
+
+  // Mostrar botones con fade in después de la transición
+  setTimeout(() => {
+    document.getElementById('main').style.opacity = 1;
+  }, 2500);
+}, 5000);
+</script>
+
+</body>
+</html>
